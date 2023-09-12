@@ -11,6 +11,8 @@ const requestLoan = require("./controllers/loanRequestController");
 const userLogin = require("./controllers/loginController");
 const userSignup = require("./controllers/signupController");
 const getLoanRequest = require("./controllers/loanActiveRequests");
+const singleLoan = require("./controllers/singleloan");
+const payInstallment = require("./controllers/payinstallment");
 
 const PORT = process.env.PORT || 3001;
 
@@ -43,6 +45,10 @@ app.post("/repay", repayLoan);
 
 // loan request lists
 app.post("/loan-requests", getLoanRequest);
+
+// single loan
+app.post("/loandetails", singleLoan);
+app.post("/payInstallment", payInstallment);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

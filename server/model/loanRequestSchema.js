@@ -6,8 +6,12 @@ const loanRequestSchema = new mongoose.Schema({
   Remaining: {
     type: Number,
     default: function () {
-      return this.amount; 
+      return this.amount;
     },
+  },
+  installment: {
+    type: Number,
+  
   },
 
   user: {

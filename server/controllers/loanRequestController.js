@@ -8,6 +8,7 @@ const requestLoan = async (req, res) => {
     // new loan request
     const newLoanRequest = new LoanRequest({
       amount: amount,
+      installment: amount / term,
       user: userId,
       term: Number(term),
     });
