@@ -16,6 +16,7 @@ const LoanRequest = () => {
   const url = `${baseURI}/apply`;
 
   const handleSubmit = async (event) => {
+    event.preventDefault();
     event.stopPropagation();
 
     try {

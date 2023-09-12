@@ -65,9 +65,9 @@ const ActiveLoans = () => {
 
                     <Link
                       to={`/loans/${item._id}`}
-                      className={`inline-block rounded bg-green-600 px-4 py-2 text-xs font-medium text-white hover:bg-green-700 my-2 text-center ${
-                        item.Remaining <= 1 &&
-                        "bg-gray-500 hover:bg-red-500 cursor-not-allowed"
+                      className={`inline-block rounded  px-4 py-2 text-xs font-medium text-white my-2 text-center ${
+                        item.Remaining <= 1 ?
+                        "bg-gray-500 hover:bg-red-500 cursor-not-allowed":"bg-green-600 hover:bg-green-700 "
                       }`}
                     >
                       {item.Remaining <= 1 ? "Closed" : "View"}
@@ -75,7 +75,6 @@ const ActiveLoans = () => {
                   </tr>
                 );
               }
-              // Return null for items with a status other than 'active'
               return null;
             })}
           </tbody>
