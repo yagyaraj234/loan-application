@@ -16,8 +16,8 @@ const LoanRequest = () => {
   const url = `${baseURI}/apply`;
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
     event.stopPropagation();
+    
 
     try {
       const response = await axios.post(url, { term, amount, userId });
