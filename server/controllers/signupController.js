@@ -1,4 +1,4 @@
-const User = require("../model/userSchema")
+const User = require("../model/userSchema");
 const bcrypt = require("bcrypt");
 
 const userSignup = async (req, res) => {
@@ -6,9 +6,7 @@ const userSignup = async (req, res) => {
     console.log(req.body);
     const findUser = await User.findOne({ email: req.body.email });
     if (findUser)
-      return res
-        .status(409)
-        .send({ message: "User already exist" });
+      return res.status(409).json({ message: "User already exist" });
 
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
     const hashPassword = await bcrypt.hash(req.body.password, salt);
@@ -19,7 +17,7 @@ const userSignup = async (req, res) => {
     }).save();
     res
       .status(201)
-      .send({ message: "User created Succesfully", user: newuser });
+      .json({ message: "User created Succesfully", user: newuser });
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: "Internal Server Error" });
