@@ -45,6 +45,7 @@ const LoanPage = () => {
   const payInstallment = async () => {
     toast.loading("Processing");
     setTimeout(async () => {
+      toast.remove();
       try {
         const res = await axios.post(payurl, { payAmount, id });
         toast.success(res.data.message);
@@ -53,7 +54,7 @@ const LoanPage = () => {
       } catch (error) {
         console.log("Error", error);
       }
-    }, 5000);
+    }, 1000);
   };
 
   return (
