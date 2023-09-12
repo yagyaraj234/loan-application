@@ -4,12 +4,12 @@ import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 // import React
 
 const terms = [
-  { id: 1, term: "3 Months" },
-  { id: 2, term: "6 Months" },
-  { id: 3, term: "9 Months" },
-  { id: 4, term: "12 Months" },
-  { id: 5, term: "18 Months" },
-  { id: 6, term: "24 Months" },
+  { id: 1, term: "3 Week" },
+  { id: 2, term: "6 Week" },
+  { id: 3, term: "9 Week" },
+  { id: 4, term: "12 Week" },
+  { id: 5, term: "18 Week" },
+  { id: 6, term: "24 Week" },
 ];
 
 export default function TermDropdown({ getTerm }) {
