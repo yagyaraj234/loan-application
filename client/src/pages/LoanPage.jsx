@@ -49,7 +49,6 @@ const LoanPage = () => {
       try {
         const res = await axios.post(payurl, { payAmount, id });
         toast.success(res.data.message);
-        console.log(res.data);
         getLoanDetails();
       } catch (error) {
         console.log("Error", error);
