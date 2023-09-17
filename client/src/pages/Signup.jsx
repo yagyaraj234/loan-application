@@ -41,13 +41,7 @@ const SignupForm = () => {
       console.log(response);
     } catch (error) {
       toast.error(error.data.message);
-      console.log(error);
-      initialValue = {
-        name: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      };
+      console.log(error); 
     }
   };
   return (
