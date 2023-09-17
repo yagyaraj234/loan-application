@@ -40,7 +40,14 @@ const SignupForm = () => {
       navigate("/login");
       console.log(response);
     } catch (error) {
+      toast.error(error.data.message);
       console.log(error);
+      initialValue = {
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      };
     }
   };
   return (
