@@ -40,7 +40,8 @@ const SignupForm = () => {
       navigate("/login");
       console.log(response);
     } catch (error) {
-      toast.error(error.data);
+      toast.error(error.response.data.message);
+      console.log(error); 
       console.log(error); 
     }
   };
