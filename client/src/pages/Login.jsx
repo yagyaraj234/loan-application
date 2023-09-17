@@ -29,12 +29,12 @@ const Login = () => {
     try {
       const response = await axios.post(url, values);
       toast.success(response.data.message);
-      navigate("/loans");
       const userId = response.data.user._id;
       setUserId(userId);
       localStorage.setItem("userId", userId);
+      navigate("/loans");
     } catch (error) {
-      toast.error(error);
+      toast.error(error.response.data.message);
       console.log(error);
     }
   };
